@@ -1,16 +1,20 @@
 import '../styles/globals.css';
-import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import { store } from '../libs/store';
-import AppTitleView from '../views/appTitleView';
 import { appWithTranslation } from 'next-i18next';
+import { SessionProvider } from '../utils/provider/SessionProvider';
+import AppTitleView from '../views/appTitleView';
+import { AppPropsWithLayout } from '../@types';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? ((page) => page);
   return (
-    <Provider store={store}>
-      <AppTitleView />
-      <Component {...pageProps} />
-    </Provider>
+    <SessionProvider>
+      <Provider store={store}>
+        <AppTitleView />
+        {getLayout(<Component {...pageProps} />)}
+      </Provider>
+    </SessionProvider>
   );
 }
 

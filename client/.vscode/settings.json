@@ -1,9 +1,12 @@
 {
   "editor.formatOnSave": true,
-  "cSpell.words": ["Immer"],
+  "cSpell.words": ["Immer", "Swipeable"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.format": true
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

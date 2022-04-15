@@ -1,11 +1,11 @@
 import * as React from 'react';
-import AppTitle from '../components/AppTitle';
-import { useAppSelector } from '../libs/hooks';
+import AppTitle from '../../components/AppTitle';
+import { useAppSelector } from '../../libs/hooks';
 import {
   selectMetaDescription,
   selectTitle,
   selectTitleSuffix,
-} from '../libs/slices/pageSlice';
+} from '../../libs/slices/pageSlice';
 import { useTranslation } from 'next-i18next';
 
 const AppTitleView: React.FC = () => {

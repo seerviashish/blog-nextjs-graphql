@@ -1,19 +1,19 @@
-import type { GetServerSideProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetServerSideProps } from 'next/types';
 import React, { ReactElement } from 'react';
-import { NextPageWithLayout } from '../@types';
-import Layout from '../layout';
+import { NextPageWithLayout } from '../../@types';
+import Layout from '../../layout';
 
-const HomePage: NextPageWithLayout = (props) => {
+const ProfilePage: NextPageWithLayout = (props) => {
   console.log('props ==> ', props);
-  return <>{'HomePage Content'}</>;
+  return <div>{'Profile'}</div>;
 };
 
-HomePage.getLayout = (page: ReactElement) => {
+ProfilePage.getLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>;
 };
 
-export default HomePage;
+export default ProfilePage;
 
 export const getServerSideProps: GetServerSideProps = async (props) => {
   return {
