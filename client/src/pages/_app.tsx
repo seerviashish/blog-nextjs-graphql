@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { Provider } from 'react-redux';
 import { store } from '../libs/store';
 import { appWithTranslation } from 'next-i18next';
-import { SessionProvider } from '../utils/provider/SessionProvider';
+import SessionProvider from '../utils/provider/SessionProvider';
 import AppTitleView from '../views/appTitleView';
 import { AppPropsWithLayout } from '../@types';
 

@@ -13,7 +13,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export type SessionContext = {
+export type SessionContextType = {
   resolved: boolean;
   loading: boolean;
   error?: any;
@@ -23,16 +23,15 @@ export type SessionContext = {
   logOut?: () => void;
 };
 
-const defaultContext: SessionContext = {
+const defaultContext: SessionContextType = {
   resolved: false,
   loading: true,
   error: null,
   isAuthenticated: false,
 };
 
-const Context = React.createContext<SessionContext>(defaultContext);
-
-const { Consumer, Provider } = Context;
+export const SessionContext =
+  React.createContext<SessionContextType>(defaultContext);
 
 const SessionProvider: React.FC<Props> = (props) => {
   const { children } = props;
@@ -65,6 +64,7 @@ const SessionProvider: React.FC<Props> = (props) => {
   };
   const handleLogOut = () => {
     localStorage.clear();
+    router.reload();
   };
   console.log('Router ==> ', router.asPath);
 
@@ -102,7 +102,7 @@ const SessionProvider: React.FC<Props> = (props) => {
     return <div>{'error'}</div>;
   }
   return (
-    <Provider
+    <SessionContext.Provider
       value={{
         loading,
         resolved,
@@ -114,8 +114,8 @@ const SessionProvider: React.FC<Props> = (props) => {
       }}
     >
       {resolved ? children : null}
-    </Provider>
+    </SessionContext.Provider>
   );
 };
 
-export { SessionProvider, Consumer as SessionConsumer };
+export default SessionProvider;
