@@ -1,10 +1,12 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
+import {
+  AppBar as MuiAppBar,
+  Box,
+  Toolbar,
+  Typography,
+  IconButton,
+  Button,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { AppBarClickAction } from '../../@types';
 
@@ -13,11 +15,11 @@ type Props = {
   onClick: (action: AppBarClickAction) => void;
 };
 
-const UAppBar: React.FC<Props> = (props) => {
+const AppBar: React.FC<Props> = (props) => {
   const { title, onClick } = props;
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <MuiAppBar position="static">
         <Toolbar>
           <IconButton
             size="large"
@@ -36,9 +38,9 @@ const UAppBar: React.FC<Props> = (props) => {
             Logout
           </Button>
         </Toolbar>
-      </AppBar>
+      </MuiAppBar>
     </Box>
   );
 };
 
-export default UAppBar;
+export default AppBar;

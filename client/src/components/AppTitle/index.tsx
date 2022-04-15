@@ -6,7 +6,7 @@ type Props = {
   description?: string;
 };
 
-const UAppTitle: React.FC<Props> = (props) => {
+const AppTitle: React.FC<Props> = (props) => {
   const { title, description } = props;
   return (
     <Head>
@@ -17,4 +17,4 @@ const UAppTitle: React.FC<Props> = (props) => {
   );
 };
 
-export default UAppTitle;
+export default AppTitle;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import UAppTitle from '../components/AppTitle';
+import AppTitle from '../components/AppTitle';
 import { useAppSelector } from '../libs/hooks';
 import {
   selectMetaDescription,
@@ -18,7 +18,7 @@ const AppTitleView: React.FC = () => {
     i18n.t(pageTitle) + (pageTitleSuffix ? i18n.t(pageTitleSuffix) : '');
   const description = i18n.t(pageMetaDescription);
 
-  return <UAppTitle title={title} description={description} />;
+  return <AppTitle title={title} description={description} />;
 };
 
 export default AppTitleView;
