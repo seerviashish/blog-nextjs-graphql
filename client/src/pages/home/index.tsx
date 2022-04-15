@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { AppBarClickAction, AppBarClickActionType } from '../../@types';
-import UAppBar from '../../components/UAppBar';
+import * as React from 'react'
+import { AppBarClickAction, AppBarClickActionType } from '../../@types'
+import AppBar from '../../components/AppBar'
 
 const HomePage: React.FC = () => {
-    const handleAppBarClick = (action: AppBarClickAction) => {
-        if (action == AppBarClickActionType.MENU) {
-        }
-        if (action == AppBarClickActionType.LOGOUT) {
-        }
+  const handleAppBarClick = (action: AppBarClickAction) => {
+    if (action == AppBarClickActionType.MENU) {
     }
-    const RenderAppBar = () => {
-        return <UAppBar title={"Home"} onClick={handleAppBarClick}></UAppBar>
+    if (action == AppBarClickActionType.LOGOUT) {
     }
-    return <>{RenderAppBar()}</>
+  }
+  const RenderAppBar = () => {
+    return <AppBar title={'Home'} onClick={handleAppBarClick}></AppBar>
+  }
+  return <>{RenderAppBar()}</>
 }
