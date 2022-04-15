@@ -1,4 +1,4 @@
-export type AppBarClickAction = 'menu' | 'logout'
+export type AppBarClickAction = 'menu' | 'logout';
 
 export enum AppBarClickActionType {
   MENU = 'menu',
@@ -6,7 +6,7 @@ export enum AppBarClickActionType {
 }
 
 export type PageState = {
-  title: string
-  titleSuffix?: string
-  metaDescription: string
-}
+  title: string;
+  titleSuffix?: string;
+  metaDescription: string;
+};

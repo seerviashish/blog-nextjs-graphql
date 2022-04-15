@@ -1,4 +1,5 @@
+node_modules
+.next
+dist
 next-i18next.config.js
 next.config.js
-.next
-node-modules

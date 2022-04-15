@@ -1,11 +1,11 @@
-import * as React from 'react'
+import * as React from 'react';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const UMain: React.FC<Props> = (props) => {
-  return <main>{props.children}</main>
-}
+  return <main>{props.children}</main>;
+};
 
-export default UMain
+export default UMain;
